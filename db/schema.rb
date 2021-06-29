@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 2021_06_28_073105) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone"
-    t.boolean "active"
-    t.integer "role"
+    t.boolean "actived", default: false
+    t.boolean "admin", default: false
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
