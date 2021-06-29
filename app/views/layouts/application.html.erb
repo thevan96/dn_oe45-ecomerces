@@ -3,17 +3,18 @@
   <head>
     <title>DnOe45Ecomerces</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", {
-      media: "all",
-      "data-turbolinks-track": "reload"
-    } %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= render "shared/rails_default" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="app container-fluid">
+      <%= render "shared/header" %>
+      <main class="app__main mt-5">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </main>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

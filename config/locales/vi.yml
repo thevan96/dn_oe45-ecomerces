@@ -1,0 +1,8 @@
+vi:
+  shared:
+    header:
+      login: "Đăng nhập"
+      cart: "Giỏ hàng"
+      search: "Tìm kiếm"
+    footer:
+      copyright: "&#169;Eshop được thiết kế bởi %{name}"
