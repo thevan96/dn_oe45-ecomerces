@@ -6,6 +6,7 @@ ruby "2.7.0"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "faker", "~> 2.18"
 gem "figaro"
+gem "i18n", "~> 1.8", ">= 1.8.10"
 gem "jbuilder", "~> 2.7"
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
