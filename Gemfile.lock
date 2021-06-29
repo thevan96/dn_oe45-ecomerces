@@ -247,6 +247,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   faker (~> 2.18)
   figaro
+  i18n (~> 1.8, >= 1.8.10)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mysql2 (~> 0.5)
