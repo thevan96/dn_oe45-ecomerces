@@ -135,3 +135,13 @@ Product.create!([
     category_id: category_dell.id
   }
 ])
+
+12.times do |n|
+  Product.create!(
+    name: "Dell #{n}",
+    price: Faker::Number.between(from: 15_000_000, to: 30_000_000),
+    description: Faker::Lorem.paragraph,
+    category_id: category_dell.id
+  )
+end
+

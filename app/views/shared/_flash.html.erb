@@ -1,12 +1,12 @@
 <% flash.each do |type, message| %>
   <% case type %>
   <% when "error" %>
-    <div class="alert alert-danger"><%= message %></div>
+    <div class="alert alert-danger shadow"><%= message %></div>
   <% when "alert" %>
-    <div class="alert alert-warning"><%= message %></div>
+    <div class="alert alert-warning shadow"><%= message %></div>
   <% when "notice" %>
-    <div class="alert alert-success"><%= message %></div>
+    <div class="alert alert-success shadow"><%= message %></div>
   <% else %>
-    <div class="alert alert-secondary"><%= message %></div>
+    <div class="alert alert-secondary shadow"><%= message %></div>
   <% end %>
 <% end %>

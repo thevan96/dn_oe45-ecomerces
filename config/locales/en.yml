@@ -7,6 +7,7 @@ en:
       sign_out: "Sign out"
     footer:
       copyright: "&#169;2021 - %{name}"
+
   sessions:
     new:
       sign_in: "Sign in"
@@ -17,3 +18,6 @@ en:
       account_not_actived: "Account not actived"
       logged_success: "Logged in successlly"
 
+  products:
+    product:
+      detail: "Detail"
