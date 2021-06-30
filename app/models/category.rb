@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :parent_id, class_name: name
+  belongs_to :parent, class_name: name, optional: true
   has_many :products, dependent: :destroy
   has_many :childrens,
            class_name: name,
