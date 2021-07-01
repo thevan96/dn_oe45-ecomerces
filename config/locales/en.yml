@@ -1,8 +1,19 @@
 en:
   shared:
     header:
-      login: "Login"
-      cart: "Cart"
-      search: "Search"
+      sign_in: "Sign in"
+      profile: "Profile"
+      settings: "Settings"
+      sign_out: "Sign out"
     footer:
-      copyright: "&#169;Eshop design by %{name}"
+      copyright: "&#169;2021 - %{name}"
+  sessions:
+    new:
+      sign_in: "Sign in"
+      email: "Email"
+      password: "Password"
+    create:
+      invalid_email_password: "Invalid email or password"
+      account_not_actived: "Account not actived"
+      logged_success: "Logged in successlly"
+

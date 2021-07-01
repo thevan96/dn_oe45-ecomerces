@@ -3,6 +3,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.0"
 
+gem "bcrypt", "~> 3.1", ">= 3.1.16"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "faker", "~> 2.18"
 gem "figaro"
@@ -21,6 +22,7 @@ group :development, :test do
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "solargraph" # Support ide, text editor
 end
 
 group :development do
