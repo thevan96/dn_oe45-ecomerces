@@ -16,3 +16,7 @@ vi:
       invalid_email_password: "Email, mật khẩu không đúng"
       account_not_actived: "Tài khoản chưa được kích hoạt"
       logged_success: "Đăng nhập thành công"
+
+  products:
+    product:
+      detail: "Chi tiết"
