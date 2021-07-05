@@ -21,3 +21,7 @@ en:
   products:
     product:
       detail: "Detail"
+    show:
+      add_to_cart: "Add to cart"
+    index:
+      no_product_found: "No product found."

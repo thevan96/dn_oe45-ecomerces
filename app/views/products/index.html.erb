@@ -1,7 +1,9 @@
-<div class="container">
-  <div class="row">
-      <%= render @products %>
-  </div>
-  <%= will_paginate @products %>
+<div class="row">
+  <% if @products.any? %>
+    <%= render @products %>
+  <% else %>
+    <h2><%= t ".no_product_found" %></h2>
+  <% end %>
 </div>
+<%= will_paginate @products if @products.any? %>
 
