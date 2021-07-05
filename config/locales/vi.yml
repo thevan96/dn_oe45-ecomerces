@@ -1,8 +1,18 @@
 vi:
   shared:
     header:
-      login: "Đăng nhập"
-      cart: "Giỏ hàng"
-      search: "Tìm kiếm"
+      sign_in: "Đăng nhập"
+      profile: "Trang cá nhân"
+      settings: "Cài đặt"
+      sign_out: "Đăng xuất"
     footer:
-      copyright: "&#169;Eshop được thiết kế bởi %{name}"
+      copyright: "&#169;2021 - %{name}"
+  sessions:
+    new:
+      sign_in: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+    create:
+      invalid_email_password: "Email, mật khẩu không đúng"
+      account_not_actived: "Tài khoản chưa được kích hoạt"
+      logged_success: "Đăng nhập thành công"

@@ -12,7 +12,7 @@ User.create!(
 
 14.times do |n|
   User.create!(
-    email: "vothevan96@gmail.com",
+    email: "account#{n}@gmail.com",
     password: "123456",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,

@@ -6,6 +6,7 @@
   &__header {
     position: sticky;
     top: 0;
+    z-index: 1;
   }
 
   &__header,
@@ -15,5 +16,11 @@
 
   &__main {
     flex-grow: 1;
+    padding-top: 80px;
+  }
+
+  &__footer {
+    padding-top: 20px;
+    border-top: 1px solid $gray;
   }
 }

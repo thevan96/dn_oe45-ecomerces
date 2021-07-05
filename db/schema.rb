@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_073105) do
+ActiveRecord::Schema.define(version: 2021_07_01_070735) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -56,15 +56,16 @@ ActiveRecord::Schema.define(version: 2021_06_28_073105) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.string "first_name"
     t.string "last_name"
+    t.string "password_digest"
     t.string "phone"
     t.boolean "actived", default: false
     t.boolean "admin", default: false
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
   end
 
   add_foreign_key "categories", "categories", column: "parent_id"
