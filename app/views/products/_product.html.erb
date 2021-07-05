@@ -4,12 +4,12 @@
       alt: "product image",
       class: "card-img-top"
     }) %>
-    <div class="card-body">
-      <h5 class="card-title"><%= product.name %></h5>
-      <p class="card-tetxt"><%= number_to_currency product.price, precision: 0 %></p>
-      <%= link_to t(".detail"), "#", {
-        class: "btn btn-primary stretched-link shadow"
-      } %>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= product.name %></h5>
+    <p class="card-tetxt"><%= number_to_currency product.price, precision: 0 %></p>
+    <%= link_to t(".detail"), product_path(product), {
+      class: "btn btn-primary stretched-link shadow"
+    } %>
+  </div>
   </div>
 </div>

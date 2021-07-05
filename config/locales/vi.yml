@@ -20,3 +20,7 @@ vi:
   products:
     product:
       detail: "Chi tiết"
+    show:
+      add_to_cart: "Thêm vào giỏ hàng"
+    index:
+      no_product_found: "Không tìm thấy sản phẩm."
