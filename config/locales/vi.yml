@@ -24,3 +24,15 @@ vi:
       add_to_cart: "Thêm vào giỏ hàng"
     index:
       no_product_found: "Không tìm thấy sản phẩm."
+
+  carts:
+    index:
+      image: "Ảnh"
+      product: "Sản phẩm"
+      price: "Giá"
+      quantity: "Số lượng"
+      sum: "Tổng"
+      cart_sumary: "Tóm tắt đơn hàng"
+      checkout: "Thanh toán"
+      amount: "Số lượng"
+      total: "Tổng"

@@ -25,3 +25,15 @@ en:
       add_to_cart: "Add to cart"
     index:
       no_product_found: "No product found."
+
+  carts:
+    index:
+      image: "Image"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      sum: "Sum"
+      cart_sumary: "Cart sumary"
+      checkout: "Checkout"
+      amount: "Amount"
+      Total: "Total"
