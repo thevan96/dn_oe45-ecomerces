@@ -1,0 +1,33 @@
+<tr>
+  <th scope="row">1</th>
+  <td>
+    <img
+      src="https://picsum.photos/200/300"
+      alt="image"
+      class="img-thumbnail"
+      style="max-height: 150px;"
+    />
+  </td>
+  <td>
+    <span><%= product.name %></span>
+  </td>
+  <td><%= format_currency product.price %></td>
+  <td>
+    <input
+      id="quantity"
+      name="quantity"
+      type="number"
+      value="<%= session[:cart][product.id.to_s] %>"
+      min="1"
+    />
+  </td>
+  <td><%=  format_currency product.price * session[:cart][product.id.to_s] %></td>
+  <td>
+    <%= button_to cart_path(id: product.id), {
+      method: :delete,
+      class:"btn btn-danger"
+    } do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+  </td>
+</tr>

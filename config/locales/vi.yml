@@ -22,6 +22,7 @@ vi:
       detail: "Chi tiết"
     show:
       add_to_cart: "Thêm vào giỏ hàng"
+      go_to_cart: "Đi tới giỏ hàng"
     index:
       no_product_found: "Không tìm thấy sản phẩm."
 
@@ -36,3 +37,9 @@ vi:
       checkout: "Thanh toán"
       amount: "Số lượng"
       total: "Tổng"
+      cart_empty: "Giỏ hàng hiện tại của bạn đang trống"
+      go_to_shop: "Quay lại mua hàng"
+    create:
+      add_success: "Thêm sản phẩm vào giỏ hàng thành công"
+      destroy_success: "Xóa sản phẩm thành công"
+      product_not_valid: "Sản phẩm không hợp lệ"

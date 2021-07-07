@@ -6,4 +6,5 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_details
 
   scope :newest, ->{order created_at: :desc}
+  scope :load_cart, ->(id){where id: id}
 end

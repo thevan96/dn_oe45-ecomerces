@@ -23,6 +23,7 @@ en:
       detail: "Detail"
     show:
       add_to_cart: "Add to cart"
+      go_to_cart: "Go to cart"
     index:
       no_product_found: "No product found."
 
@@ -36,4 +37,11 @@ en:
       cart_sumary: "Cart sumary"
       checkout: "Checkout"
       amount: "Amount"
-      Total: "Total"
+      total: "Total"
+      cart_empty: "Your cart is current empty"
+      go_to_shop: "Return to shop"
+    create:
+      add_success: "Add product in cart success"
+      product_not_valid: "Product not valid"
+    destroy:
+      destroy_success: "Delete product in cart success"

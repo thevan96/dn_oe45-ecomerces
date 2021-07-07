@@ -1,72 +1,38 @@
 <div class="row">
-  <div class="col-lg-9">
-    <table class="table shadow">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col"><%= t ".image" %></th>
-          <th scope="col"><%= t ".product" %></th>
-          <th scope="col"><%= t ".price" %></th>
-          <th scope="col"><% t ".quantity" %></th>
-          <th scope="col"><%= t ".sum" %></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>
-            <img src="https://picsum.photos/200/300" alt="image"
-            class="img-thumbnail"
-            style="max-height: 150px;"
-            />
-          </td>
-          <td>
-            <span>DELL 1</span>
-          </td>
-          <td>$300</td>
-          <td>
-            <input id="quantity" name="quantity" type="number" value="1"
-            min="1" />
-          </td>
-          <td>$300</td>
-          <td>
-            <%= button_tag "", class:"btn btn-danger" do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>
-            <img src="https://picsum.photos/200/300" alt="image"
-            class="img-thumbnail"
-            style="max-height: 150px;"
-            />
-          </td>
-          <td>
-            <span>DELL 2</span>
-          </td>
-          <td>$300</td>
-          <td>
-            <input id="quantity" name="quantity" type="number" value="1"
-            min="1" />
-          </td>
-          <td>$300</td>
-          <td>
-            <%= button_tag "", class:"btn btn-danger" do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-lg-3 shadow">
-    <h2><%= t ".cart_sumary" %></h2>
-    <div class="mb-2 mt-2 horizontal-line"></div>
-    <p><%= t ".amount" %>: <span>2</span></p>
-    <p><%= t ".total" %>: <span>$6000</span></p>
-    <%= button_tag t(".checkout"), class: "btn btn-secondary" %>
-  </div>
+  <% if @products.empty?  %>
+    <div class="col text-center">
+      <h4 class="mb-4"><%= t ".cart_empty" %></h4>
+      <%= link_to root_path, class:"btn btn-primary" do %>
+        <i class="fas fa-chevron-left"></i> <%= t ".go_to_shop" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col-lg-9">
+      <table class="table shadow">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"><%= t ".image" %></th>
+            <th scope="col"><%= t ".product" %></th>
+            <th scope="col"><%= t ".price" %></th>
+            <th scope="col"><%= t ".quantity" %></th>
+            <th scope="col"><%= t ".sum" %></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'product', collection: @products %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3 shadow pb-1">
+      <h2><%= t ".cart_sumary" %></h2>
+
+      <div class="mb-2 mt-2 horizontal-line"></div>
+
+      <p><%= t ".amount" %>: <span><%= amount_product %></span></p>
+      <p><%= t ".total" %>: <span><%= format_currency @total  %></span></p>
+      <%= button_tag t(".checkout"), class: "btn btn-secondary" %>
+    </div>
+  <% end %>
 </div>
