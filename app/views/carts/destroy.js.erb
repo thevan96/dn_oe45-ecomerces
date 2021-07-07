@@ -1,0 +1,7 @@
+<% if session[:cart].empty? %>
+    $('#cart').html('<%= j render 'carts/empty_cart' %>')
+<% else %>
+    $('#cart-item-<%= @id %>' ).hide();
+<% end %>
+
+$('#amount_product').html(<%= amount_product %>)

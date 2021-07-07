@@ -1,17 +1,11 @@
-<div class="row">
+<div class="row" id="cart">
   <% if @products.empty?  %>
-    <div class="col text-center">
-      <h4 class="mb-4"><%= t ".cart_empty" %></h4>
-      <%= link_to root_path, class:"btn btn-primary" do %>
-        <i class="fas fa-chevron-left"></i> <%= t ".go_to_shop" %>
-      <% end %>
-    </div>
+    <%= render "carts/empty_cart" %>
   <% else %>
     <div class="col-lg-9">
       <table class="table shadow">
         <thead class="thead-light">
           <tr>
-            <th scope="col">#</th>
             <th scope="col"><%= t ".image" %></th>
             <th scope="col"><%= t ".product" %></th>
             <th scope="col"><%= t ".price" %></th>
@@ -30,9 +24,11 @@
 
       <div class="mb-2 mt-2 horizontal-line"></div>
 
-      <p><%= t ".amount" %>: <span><%= amount_product %></span></p>
-      <p><%= t ".total" %>: <span><%= format_currency @total  %></span></p>
+      <p><%= t ".amount" %>: <span id="cart-sumary-amount"><%= amount_product %></span></p>
+      <p><%= t ".total" %>: <span id="total"><%= format_currency @total  %></span></p>
       <%= button_tag t(".checkout"), class: "btn btn-secondary" %>
     </div>
   <% end %>
 </div>
+
+<%= javascript_pack_tag "handle_update_quantity" %>

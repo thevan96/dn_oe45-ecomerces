@@ -11,7 +11,9 @@
       <%= render "shared/header" %>
       <main class="app__main">
         <div class="container">
-          <%= render "shared/flash" %>
+          <div id="flash-messages">
+            <%= render "shared/flash" %>
+          </div>
           <%= yield %>
         </div>
       </main>

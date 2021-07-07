@@ -1,0 +1,3 @@
+$('#flash-messages').html("<%= j render 'shared/flash' %>")
+$('#nav-buttons').html("<%= j render partial: 'carts/add_to_cart', locals: {id: @id.to_i} %>")
+$('#amount_product').html(<%= amount_product %>)
