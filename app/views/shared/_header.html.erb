@@ -14,7 +14,7 @@
         <ul id="navbarNav" class="navbar-nav navbar-collapese ml-auto">
           <li clas="nav-item">
             <%= link_to carts_path, class: "nav-link" do %>
-              <i class="fas fa-shopping-cart mr-1"></i><sup>2</sup>
+              <i class="fas fa-shopping-cart mr-1"></i><sup><%= amount_product %></sup>
             <% end %>
           </li>
           <% if logged_in? %>
