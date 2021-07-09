@@ -22,4 +22,11 @@ class ApplicationController < ActionController::Base
   def init_cart
     session[:cart] ||= {}
   end
+
+  def require_logged_in
+    return if session[:user_id].present?
+
+    store_location
+    redirect_to sign_in_path, alert: t(".required_sign_in")
+  end
 end

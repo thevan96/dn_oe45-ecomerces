@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
   def handle_actived
     if @user.actived
       session[:user_id] = @user.id
-      redirect_to root_path, notice: t(".logged_success")
+      redirect_back_or root_path, t(".logged_success")
     else
       flash[:alert] = t ".account_not_actived"
       render :new

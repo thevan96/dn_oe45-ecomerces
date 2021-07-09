@@ -14,4 +14,14 @@ module SessionsHelper
   def product_in_cart? id
     session[:cart].keys.include? id.to_s
   end
+
+  def redirect_back_or default, message
+    redirect_to session[:forwarding_url],
+                notice: (message unless message.empty?) || default
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
 end
