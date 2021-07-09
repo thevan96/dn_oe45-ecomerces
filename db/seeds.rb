@@ -95,19 +95,22 @@ Product.create!(
       name: "Galaxy Note series",
       price: 23_990_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_samsung.id
+      category_id: category_samsung.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     },
     {
       name: "Galaxy Z series",
       price: 19_990_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_samsung.id
+      category_id: category_samsung.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     },
     {
       name: "Samsung Galaxy Z Fold2 5G",
       price: 50_000_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_samsung.id
+      category_id: category_samsung.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     }
   ]
 )
@@ -119,13 +122,15 @@ Product.create!(
       name: "Xiaomi Redmi Note 10S",
       price: 6_209_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_xiaomi.id
+      category_id: category_xiaomi.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     },
     {
       name: "Xiaomi Redmi 9A",
       price: 3_000_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_xiaomi.id
+      category_id: category_xiaomi.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     }
   ]
 )
@@ -137,13 +142,15 @@ Product.create!(
       name: "Dell G3",
       price: 26_990_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_dell.id
+      category_id: category_dell.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     },
     {
       name: "Laptop Dell Inspiron N7490",
       price: 20_990_000,
       description: Faker::Lorem.paragraphs(number: 4).join(" "),
-      category_id: category_dell.id
+      category_id: category_dell.id,
+      quantity: Faker::Number.between(from: 20, to: 100)
     }
   ]
 )
@@ -153,6 +160,7 @@ Product.create!(
     name: "Dell #{n}",
     price: Faker::Number.between(from: 15_000_000, to: 30_000_000),
     description: Faker::Lorem.paragraphs(number: 4).join(" "),
-    category_id: category_dell.id
+    category_id: category_dell.id,
+    quantity: Faker::Number.between(from: 20, to: 100)
   )
 end
