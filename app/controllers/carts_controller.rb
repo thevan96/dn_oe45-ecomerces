@@ -1,13 +1,14 @@
 class CartsController < ApplicationController
   before_action :product_correct, only: [:create, :destroy, :update]
-  before_action :load_cart, only: [:index, :update]
+  before_action :load_products_in_cart, only: [:index, :update]
+  before_action :load_total, only: [:index, :update]
 
   def index; end
 
   def create
     @id = params[:id]
     session[:cart][@id] = 1 unless product_in_cart? @id
-    flash.now[:notice] = "Add product to cart success"
+    flash.now[:notice] = t ".add_success"
 
     respond_to do |format|
       format.js
@@ -17,6 +18,8 @@ class CartsController < ApplicationController
   def update
     id = params[:id]
     value = params[:value].to_i
+    return if value <= 0
+
     session[:cart][id] = value if product_in_cart? id
     total_item = @product.price * session[:cart][id]
 
@@ -41,13 +44,6 @@ class CartsController < ApplicationController
   end
 
   private
-
-  def load_cart
-    @products = Product.load_cart(session[:cart].keys)
-    @total = @products.reduce(0) do |sum, product|
-      sum + product.price * session[:cart][product.id.to_s]
-    end
-  end
 
   def product_correct
     @product = Product.find_by id: params[:id].to_i

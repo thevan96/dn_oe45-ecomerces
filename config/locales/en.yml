@@ -23,6 +23,8 @@ en:
       detail: "Detail"
     index:
       no_product_found: "No product found."
+    show:
+      out_of_stock: "Out of stock"
 
   carts:
     add_to_cart:
@@ -50,6 +52,7 @@ en:
   orders:
     required_sign_in: "You must be signed in do that."
     new:
+      total: "Total"
       your_cart: "Your cart"
       your_order: "Your order"
       first_name: "First name"
@@ -66,3 +69,6 @@ en:
       credit_card: "Credit cart"
       debit_card: "Debit card"
       confirm_order: "Confirm order"
+    create:
+      create_order_success: "Create order success"
+      create_order_error: "Opps!. Create order error"

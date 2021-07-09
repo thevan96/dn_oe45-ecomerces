@@ -1,8 +1,8 @@
-<% if product_in_cart? id %>
+<% if product_in_cart? @product.id %>
   <%= link_to t(".go_to_cart"), carts_path, class:"btn btn-secondary" %>
 <% else %>
-  <%= button_to t(".add_to_cart"), carts_path(id: id), {
+  <%= button_to t(".add_to_cart"), carts_path(id: @product.id), {
     remote: true,
     class: "btn btn-primary"
   } %>
-<% end %>
+  <% end %>
