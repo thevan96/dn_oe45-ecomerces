@@ -44,3 +44,23 @@ vi:
     empty_cart:
       cart_empty: "Giỏ hàng hiện tại của bạn đang trống"
       go_to_shop: "Quay lại mua hàng"
+
+  orders:
+    required_sign_in: "Bạn cần đăng nhập để tiếp tục."
+    new:
+      your_cart: "Giỏ hàng"
+      your_order: "Đơn hàng của bạn"
+      first_name: "Tên"
+      last_name: "Họ"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      address_receive: "Địa chỉ người nhận"
+      another_address: "Giao hàng tới địa chỉ khác"
+      name_receive: "Tên người nhận"
+      note: "Ghi chú"
+      ship_cost: "Phụ phí"
+      method_payment: "Phương thức thanh toán"
+      cod: "COD (Thu tiền khi nhận )"
+      credit_card: "Thẻ tính dụng"
+      debit_card: "Thẻ ghi nợ"
+      confirm_order: "Xác nhận đặt hàng"

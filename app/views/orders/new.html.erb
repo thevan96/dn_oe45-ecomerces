@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-md-4 order-md-2 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted"><%= t ".your_cart" %></span>
+      <span class="badge badge-secondary badge-pill"><%= amount_product %></span>
+    </h4>
+    <ul class="list-group mb-3">
+      <% @products.each do |product| %>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <h6 class="my-0"><%= product.name %> x <span class="badge badge-info"> <%= session[:cart][product.id.to_s] %></span></h6>
+          <span class="text-muted"><%= format_currency(product.price  * session[:cart][product.id.to_s]) %></span>
+        </li>
+      <% end %>
+      <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <h6 class="my-0"><%= t ".ship_cost" %></h6>
+        <span class="text-muted">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Total</span>
+        <strong><%= format_currency(@total) %></strong>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3"><%= t ".your_order" %></h4>
+    <%= form_with url: '' do |form| %>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= form.label :first_name, t(".first_name") %>
+          <%= form.text_field :first_name, class: "form-control", required: true, readonly: true, value: current_user.first_name %>
+        </div>
+        <div class="col-md-6 mb-3">
+          <%= form.label :last_name, t(".last_name") %>
+          <%= form.text_field :last_name, class: "form-control", required: true, readonly: true, value: current_user.last_name %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :email, "Email" %>
+        <%= form.email_field :email, class: "form-control", placeholder: "emaiexample.com", required: true, readonly: true, value: current_user.email %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :phone, t(".phone") %>
+        <%= form.text_field :phone, class: "form-control", required: true, readonly: true, value: current_user.phone %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :address, t(".address") %>
+        <%= form.text_field :address, class: "form-control", required: true, value: current_user.address, readonly: true %>
+      </div>
+
+      <div class="form-check mb-3">
+        <%= form.label '', {"data-toggle":"collapse", "data-target": "#options", "aria-controls": "options", "aria-expanded": false}  do %>
+          <%= form.check_box '', class: "form-check-input" %>
+          <%= t ".another_address" %>
+        <% end %>
+        <div id="options" class="collapse">
+          <div class="mb-3">
+            <%= form.label :name_receive, t(".name_receive") %>
+            <%= form.text_field :name_receive, class: "form-control",  required: true %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :address_receive, t(".address_receive") %>
+            <%= form.text_field :address_receive, class: "form-control", required: true %>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :note, t(".note") %>
+        <%= form.text_area :note, rows: 3, class: "form-control" %>
+      </div>
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3"><%= t ".method_payment" %></h4>
+
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="cod" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+          <label class="custom-control-label" for="paypal"><%= t ".cod" %></label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <label class="custom-control-label" for="credit"><%= t ".credit_card" %></label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <label class="custom-control-label" for="debit"><%= t ".debit_card" %></label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <label class="custom-control-label" for="paypal">Paypal</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit"><%= t ".confirm_order" %></button>
+    <% end %>
+  </div>
+</div>

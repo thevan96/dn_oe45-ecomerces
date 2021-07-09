@@ -46,3 +46,23 @@ en:
     empty_cart:
       cart_empty: "Your cart is current empty"
       go_to_shop: "Return to shop"
+
+  orders:
+    required_sign_in: "You must be signed in do that."
+    new:
+      your_cart: "Your cart"
+      your_order: "Your order"
+      first_name: "First name"
+      last_name: "Last name"
+      phone: "Phone"
+      address: "Address"
+      address_receive: "Receive's address"
+      name_receive: "Name receive"
+      another_address: "Another address"
+      note: "Note"
+      ship_cost: "Ship cost"
+      method_payment: "Method payment"
+      cod: "COD (Cash On Delivery)"
+      credit_card: "Credit cart"
+      debit_card: "Debit card"
+      confirm_order: "Confirm order"

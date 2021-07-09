@@ -26,7 +26,7 @@
 
       <p><%= t ".amount" %>: <span id="cart-sumary-amount"><%= amount_product %></span></p>
       <p><%= t ".total" %>: <span id="total"><%= format_currency @total  %></span></p>
-      <%= button_tag t(".checkout"), class: "btn btn-secondary" %>
+      <%= link_to t(".checkout"), new_order_path, class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
