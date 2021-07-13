@@ -22,6 +22,9 @@ vi:
       detail: "Chi tiết"
     index:
       no_product_found: "Không tìm thấy sản phẩm."
+    show:
+      out_of_stock: "Hết hàng"
+
 
   carts:
     index:
@@ -64,3 +67,6 @@ vi:
       credit_card: "Thẻ tính dụng"
       debit_card: "Thẻ ghi nợ"
       confirm_order: "Xác nhận đặt hàng"
+    create:
+      create_order_success: "Tạo đơn hàng thành công"
+      create_order_errror: "Có lỗi xảy ra. Đơn hàng chưa được tạo"

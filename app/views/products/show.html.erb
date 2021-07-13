@@ -12,10 +12,16 @@
       Price:
       <strong> <%= format_currency @product.price %> </strong>
     </p>
+    <% if product_empty @product %>
+      <h4><%= t ".out_of_stock" %></h4>
+    <% end %>
     <div class="horizontal-line mb-4 mt-4"></div>
     <p><%= @product.description %></p>
-    <div id="nav-buttons">
-      <%= render partial: "carts/add_to_cart", locals: {id: @product.id} %>
-    </div>
+
+    <% unless product_empty @product %>
+      <div id="nav-buttons">
+        <%= render partial: "carts/add_to_cart", locals: {product: @product} %>
+      </div>
+    <% end %>
   </div>
 </div>

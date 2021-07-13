@@ -1,33 +1,29 @@
-<tr id=<%= "cart-item-#{product.id}" %>>
+<% id, name, price, inventory_count = product.values_at(:id, :name, :price, :inventory_count) %>
+
+<tr id=<%= "cart-item-#{id}" %>>
   <td>
-    <img
-      src="https://picsum.photos/200/300"
+    <img src="https://picsum.photos/200/300"
       alt="image"
       class="form-control"
       style="height: 150px; width: 100%; object-fit: cover;"
-      />
+    />
   </td>
-  <td>
-    <span class="form-control" name="name"><%= product.name %></span>
-  </td>
-  <td>
-    <span class="form-control" name="price"><%= format_currency product.price %></span>
-  </td>
-  <td>
-    <%= number_field_tag "cart-item-quantity-#{product.id}", session[:cart][product.id.to_s], {
-      in: 1..product.quantity,
-      "data-id":  "#{product.id}",
-      "data-action": "carts/#{product.id}",
+  <td><span class="form-control" name="name"><%= name %></span></td>
+  <td><span class="form-control" name="price"><%= format_currency price %></span></td>
+  <td><%= number_field_tag "cart-item-quantity-#{id}", session[:cart][id.to_s], {
+      in: 1..inventory_count,
+      "data-id":  "#{id}",
+      "data-action": "carts/#{id}",
       class: "form-control"
     } %>
   </td>
   <td>
-    <span class="form-control" id="total-item-<%= product.id %>">
-      <%= format_currency product.price * session[:cart][product.id.to_s] %>
+    <span class="form-control" id="total-item-<%= id %>">
+      <%= format_currency price * session[:cart][id.to_s] %>
     </span>
   </td>
   <td>
-    <%= button_to cart_path(id: product.id), {
+    <%= button_to cart_path(id: id), {
       method: :delete,
       remote: true,
       class: "btn btn-danger"

@@ -24,4 +24,17 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def load_products_in_cart
+    filter_attributes = [:id, :name, :price, :inventory_count]
+    @products = Product.load_cart(session[:cart].keys).select(filter_attributes)
+  end
+
+  def load_total
+    return 0 unless @products
+
+    @total = @products.reduce(0) do |sum, product|
+      sum + product.price * session[:cart][product.id.to_s]
+    end
+  end
 end

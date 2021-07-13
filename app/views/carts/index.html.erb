@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= render partial: 'product', collection: @products %>
+          <%= render partial: "product", collection: @products %>
         </tbody>
       </table>
     </div>
@@ -25,7 +25,7 @@
       <div class="mb-2 mt-2 horizontal-line"></div>
 
       <p><%= t ".amount" %>: <span id="cart-sumary-amount"><%= amount_product %></span></p>
-      <p><%= t ".total" %>: <span id="total"><%= format_currency @total  %></span></p>
+      <p><%= t ".total" %>: <span id="total"><%= format_currency @total %></span></p>
       <%= link_to t(".checkout"), new_order_path, class: "btn btn-primary" %>
     </div>
   <% end %>
